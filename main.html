@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Jawaban 50 Soal Algoritma dan Pemrograman</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        pre { font-family: monospace; line-height: 1.2; font-size: 16px; margin: 5px 0; }
+        h3 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-top: 25px; }
+        hr { border: 0; height: 1px; background: #ddd; margin: 15px 0; }
+        .red { color: red; }
+        .blue { color: blue; }
+    </style>
+</head>
+<body>
+
+<script>
+// =================================
+// 1. MEMBALIK KALIMAT
+// =================================
+let kalimat = prompt("1. Masukkan kalimat:") || "Hallo";
+let hasil1 = "";
+for (let i = kalimat.length - 1; i >= 0; i--) {
+    hasil1 += kalimat[i];
+}
+document.write("<h3>1. Membalik Kalimat</h3>");
+document.write("Hasil: " + hasil1 + "<hr>");
+
+
+// =================================
+// 2. MENCARI JUMLAH HURUF
+// =================================
+let teks = prompt("2. Masukkan kalimat:") || "Algoritma Pemrograman";
+let cari = prompt("Masukkan huruf yang dicari:") || "a";
+let jumlah2 = 0;
+for (let i = 0; i < teks.length; i++) {
+    if (teks[i].toLowerCase() === cari.toLowerCase()) {
+        jumlah2++;
+    }
+}
+document.write("<h3>2. Mencari Jumlah Huruf</h3>");
+document.write("Jumlah huruf '" + cari + "' dalam '" + teks + "' = " + jumlah2 + "<hr>");
+
+
+// =================================
+// 3. JUMLAH KARAKTER
+// =================================
+let kata = prompt("3. Masukkan kalimat:") || "Pemrograman";
+document.write("<h3>3. Hitung Jumlah Karakter</h3>");
+document.write("Jumlah karakter dari '" + kata + "' = " + kata.length + "<hr>");
+
+
+// =================================
+// 4. POLA ANGKA: 122333444455555666666
+// =================================
+document.write("<h3>4. Tampilan Angka (1 22 333 4444 55555 666666)</h3>");
+for (let i = 1; i <= 6; i++) {
+    for (let j = 1; j <= i; j++) {
+        document.write(i);
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 5. POLA ANGKA: 666666555554444333221
+// =================================
+document.write("<h3>5. Tampilan Angka Terbalik (666666 55555 4444 333 22 1)</h3>");
+for (let i = 6; i >= 1; i--) {
+    for (let j = 1; j <= i; j++) {
+        document.write(i);
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 6. POLA ANGKA: 112123123412345123456
+// =================================
+document.write("<h3>6. Tampilan Angka Meningkat (1 12 123 1234 12345 123456)</h3>");
+for (let i = 1; i <= 6; i++) {
+    for (let j = 1; j <= i; j++) {
+        document.write(j);
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 7. POLA ANGKA: 654321543214321321211
+// =================================
+document.write("<h3>7. Tampilan Angka Menurun (654321 54321 4321 321 21 1)</h3>");
+for (let i = 6; i >= 1; i--) {
+    for (let j = i; j >= 1; j--) {
+        document.write(j);
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 8. POLA ANGKA: 112333123455555123456
+// =================================
+document.write("<h3>8. Tampilan Pola Angka Selang-Seling (Ganjil Statis, Genap Dinamis)</h3>");
+for (let i = 1; i <= 6; i++) {
+    for (let j = 1; j <= i; j++) {
+        if (i % 2 === 1) {
+            document.write(i);
+        } else {
+            document.write(j);
+        }
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 9. POLA ANGKA: 122123444412345666666
+// =================================
+document.write("<h3>9. Tampilan Pola Angka Selang-Seling (Ganjil Dinamis, Genap Statis)</h3>");
+for (let i = 1; i <= 6; i++) {
+    for (let j = 1; j <= i; j++) {
+        if (i % 2 === 0) {
+            document.write(i);
+        } else {
+            document.write(j);
+        }
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 10. POLA ANGKA: 654321555554321333211
+// =================================
+document.write("<h3>10. Tampilan Pola Angka Menurun Selang-Seling</h3>");
+for (let i = 6; i >= 1; i--) {
+    for (let j = i; j >= 1; j--) {
+        if (i % 2 === 0) {
+            document.write(j);
+        } else {
+            document.write(i);
+        }
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 11. POLA ANGKA: 666666123454444123221
+// =================================
+document.write("<h3>11. Tampilan Pola Angka Terbalik Selang-Seling</h3>");
+for (let i = 6; i >= 1; i--) {
+    for (let j = 1; j <= i; j++) {
+        if (i % 2 === 0) {
+            document.write(i);
+        } else {
+            document.write(j);
+        }
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 12. POLA ANGKA S/D 9 BARIS
+// =================================
+document.write("<h3>12. Tampilan Pola Angka Variasi 9 Baris (Tipe A)</h3>");
+for (let i = 1; i <= 9; i++) {
+    for (let j = 1; j <= i; j++) {
+        if (i === 2 || i === 5 || i === 6 || i === 9) {
+            document.write(i);
+        } else {
+            document.write(j);
+        }
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 13. POLA ANGKA S/D 9 BARIS
+// =================================
+document.write("<h3>13. Tampilan Pola Angka Variasi 9 Baris (Tipe B)</h3>");
+for (let i = 1; i <= 9; i++) {
+    for (let j = 1; j <= i; j++) {
+        if (i === 1 || i === 3 || i === 4 || i === 7 || i === 8) {
+            document.write(i);
+        } else {
+            document.write(j);
+        }
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 14. POLA ANGKA MENURUN DARI 8
+// =================================
+document.write("<h3>14. Tampilan Pola Angka Menurun dari 8</h3>");
+for (let i = 8; i >= 1; i--) {
+    for (let j = i; j >= 1; j--) {
+        if (i >= 7 || i === 4) {
+            document.write(i);
+        } else {
+            document.write(j);
+        }
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 15. POLA ANGKA MENURUN DARI 8
+// =================================
+document.write("<h3>15. Tampilan Pola Angka Variasi Menurun dari 8</h3>");
+for (let i = 8; i >= 1; i--) {
+    for (let j = i; j >= 1; j--) {
+        if (i === 6 || i === 5) {
+            document.write(i);
+        } else {
+            document.write(j);
+        }
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 16. BARISAN ANGKA (n + 4, n - 2)
+// =================================
+document.write("<h3>16. Barisan Angka (Rumus: n + 4, n - 2)</h3>");
+let angka16 = 1;
+for (let i = 1; i <= 12; i++) {
+    document.write(angka16 + " ");
+    if (i % 2 === 1) {
+        angka16 += 4;
+    } else {
+        angka16 -= 2;
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 17. BARISAN ANGKA (n + 10, n - 5)
+// =================================
+document.write("<h3>17. Barisan Angka (Rumus: n + 10, n - 5)</h3>");
+let angka17 = 2;
+for (let i = 1; i <= 10; i++) {
+    document.write(angka17 + " ");
+    if (i % 2 === 1) {
+        angka17 += 10;
+    } else {
+        angka17 -= 5;
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 18. BARISAN ANGKA (n - 3, n + 5)
+// =================================
+document.write("<h3>18. Barisan Angka (Rumus: n - 3, n + 5)</h3>");
+let angka18 = 5;
+for (let i = 1; i <= 12; i++) {
+    document.write(angka18 + " ");
+    if (i % 2 === 1) {
+        angka18 -= 3;
+    } else {
+        angka18 += 5;
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 19. BARISAN ANGKA (n * 3, n - 5)
+// =================================
+document.write("<h3>19. Barisan Angka (Rumus: n * 3, n - 5)</h3>");
+let angka19 = 3;
+for (let i = 1; i <= 10; i++) {
+    document.write(angka19 + " ");
+    if (i % 2 === 1) {
+        angka19 *= 3;
+    } else {
+        angka19 -= 5;
+    }
+}
+document.write("<hr>");
+
+
+// =================================
+// 20. BARISAN ANGKA (n + 1, n + 2, n + 3)
+// =================================
+document.write("<h3>20. Barisan Angka (Rumus: +1, +2, +3, ...)</h3>");
+let angka20 = 1;
+let pola20 = [1, 2, 3];
+let idx20 = 0;
+for (let i = 1; i <= 13; i++) {
+    document.write(angka20 + " ");
+    angka20 += pola20[idx20];
+    idx20 = (idx20 + 1) % pola20.length;
+}
+document.write("<hr>");
+
+
+// =================================
+// 21. PERKALIAN 2
+// =================================
+document.write("<h3>21. Barisan Angka Perkalian 2</h3>");
+let angka21 = 1;
+for (let i = 1; i <= 10; i++) {
+    document.write(angka21 + " ");
+    angka21 *= 2;
+}
+document.write("<hr>");
+
+
+// =================================
+// 22. FAKTORIAL
+// =================================
+document.write("<h3>22. Tampilkan Bilangan Faktorial n!</h3>");
+let n = 3;
+let hasil22 = 1;
+let teksProc = "";
+for (let i = n; i >= 1; i--) {
+    hasil22 *= i;
+    teksProc += i + (i > 1 ? " x " : "");
+}
+document.write(n + "! = " + teksProc + " = " + hasil22 + "<hr>");
+
+
+// =================================
+// 23. FIBONACCI
+// =================================
+document.write("<h3>23. Tampilkan Bilangan Fibonacci</h3>");
+let batas = 100;
+let a = 0, b = 1;
+while (a <= batas) {
+    document.write(a + " ");
+    let c = a + b;
+    a = b;
+    b = c;
+}
+document.write("<hr>");
+
+
+// =================================
+// 24 - 28. TAHUN KABISAT
+// =================================
+let n_awal = 1900;
+let n_akhir = 2025;
+
+function isKabisat(tahun) {
+    return (tahun % 400 === 0) || (tahun % 4 === 0 && tahun % 100 !== 0);
+}
+
+[0, 2, 4, 6, 8].forEach((digit, i) => {
+    let nomor = 24 + i;
+    document.write("<h3>" + nomor + ". Tahun Kabisat Akhir " + digit + "</h3>");
+    for (let t = n_awal; t <= n_akhir; t++) {
+        if (isKabisat(t) && t % 10 === digit) {
+            document.write(t + " ");
+        }
+    }
+    document.write("<hr>");
+});
+
+
+// =================================
+// 29 - 33. HABIS DIBAGI 3 HINGGA 7
+// =================================
+[3, 4, 5, 6, 7].forEach((pembagi, i) => {
+    let nomor = 29 + i;
+    document.write("<h3>" + nomor + ". Bilangan Habis Dibagi " + pembagi + "</h3>");
+    for (let t = n_awal; t <= n_akhir; t++) {
+        if (t % pembagi === 0) {
+            document.write(t + " ");
+        }
+    }
+    document.write("<hr>");
+});
+
+
+// =================================
+// 34 - 41. ANIMASI 0
+// =================================
+document.write("<h3>34. Animasi 0 Kiri Ke Kanan & Kembali (Baris Atas)</h3><div id='animasi34'></div><hr>");
+let pos34 = 0, dir34 = 1;
+setInterval(() => {
+    document.getElementById("animasi34").innerHTML = "&nbsp;".repeat(pos34) + "0";
+    pos34 += dir34;
+    if (pos34 >= 30 || pos34 <= 0) dir34 *= -1;
+}, 100);
+
+document.write("<h3>35. Animasi 0 Kanan Ke Kiri & Kembali (Baris Atas)</h3><div id='animasi35'></div><hr>");
+let pos35 = 30, dir35 = -1;
+setInterval(() => {
+    document.getElementById("animasi35").innerHTML = "&nbsp;".repeat(pos35) + "0";
+    pos35 += dir35;
+    if (pos35 <= 0 || pos35 >= 30) dir35 *= -1;
+}, 100);
+
+document.write("<h3>36. Animasi 0 Kiri Ke Kanan & Kembali (Baris Bawah)</h3><div id='animasi36'></div><hr>");
+let pos36 = 0, dir36 = 1;
+setInterval(() => {
+    document.getElementById("animasi36").innerHTML = "<br>".repeat(5) + "&nbsp;".repeat(pos36) + "0";
+    pos36 += dir36;
+    if (pos36 >= 30 || pos36 <= 0) dir36 *= -1;
+}, 100);
+
+document.write("<h3>37. Animasi 0 Kanan Ke Kiri & Kembali (Baris Bawah)</h3><div id='animasi37'></div><hr>");
+let pos37 = 30, dir37 = -1;
+setInterval(() => {
+    document.getElementById("animasi37").innerHTML = "<br>".repeat(5) + "&nbsp;".repeat(pos37) + "0";
+    pos37 += dir37;
+    if (pos37 <= 0 || pos37 >= 30) dir37 *= -1;
+}, 100);
+
+document.write("<h3>38. Animasi 0 Kiri Atas Ke Kiri Bawah & Kembali</h3><div id='animasi38'></div><hr>");
+let pos38 = 0, dir38 = 1;
+setInterval(() => {
+    document.getElementById("animasi38").innerHTML = "<br>".repeat(pos38) + "0";
+    pos38 += dir38;
+    if (pos38 >= 8 || pos38 <= 0) dir38 *= -1;
+}, 150);
+
+document.write("<h3>39. Animasi 0 Kiri Bawah Ke Kiri Atas & Kembali</h3><div id='animasi39'></div><hr>");
+let pos39 = 8, dir39 = -1;
+setInterval(() => {
+    document.getElementById("animasi39").innerHTML = "<br>".repeat(pos39) + "0";
+    pos39 += dir39;
+    if (pos39 <= 0 || pos39 >= 8) dir39 *= -1;
+}, 150);
+
+document.write("<h3>40. Animasi 0 Kanan Atas Ke Kanan Bawah & Kembali</h3><div id='animasi40'></div><hr>");
+let pos40 = 0, dir40 = 1;
+setInterval(() => {
+    document.getElementById("animasi40").innerHTML = "<br>".repeat(pos40) + "&nbsp;".repeat(30) + "0";
+    pos40 += dir40;
+    if (pos40 >= 8 || pos40 <= 0) dir40 *= -1;
+}, 150);
+
+document.write("<h3>41. Animasi 0 Kanan Bawah Ke Kanan Atas & Kembali</h3><div id='animasi41'></div><hr>");
+let pos41 = 8, dir41 = -1;
+setInterval(() => {
+    document.getElementById("animasi41").innerHTML = "<br>".repeat(pos41) + "&nbsp;".repeat(30) + "0";
+    pos41 += dir41;
+    if (pos41 <= 0 || pos41 >= 8) dir41 *= -1;
+}, 150);
+
+
+// =================================
+// 42 - 45. OLAH MINIMAL 10 ANGKA
+// =================================
+let kumpulanAngka = [];
+for (let i = 1; i <= 10; i++) {
+    let inp = prompt("42-45. Masukkan angka ke-" + i + ":");
+    kumpulanAngka.push(inp !== null && inp !== "" ? parseFloat(inp) : i * 3);
+}
+
+let terbesar = Math.max(...kumpulanAngka);
+let terkecil = Math.min(...kumpulanAngka);
+let totalGenap = 0, totalGanjil = 0;
+
+kumpulanAngka.forEach(val => {
+    if (val % 2 === 0) totalGenap += val;
+    else totalGanjil += val;
+});
+
+document.write("<h3>Data Angka Masukan: " + kumpulanAngka.join(", ") + "</h3><hr>");
+document.write("<h3>42. Cari Bilangan Terbesar dari 10 Masukan</h3>Maksimum: " + terbesar + "<hr>");
+document.write("<h3>43. Cari Bilangan Terkecil dari 10 Masukan</h3>Minimum: " + terkecil + "<hr>");
+document.write("<h3>44. Hitung Jumlah Bilangan Genap dari 10 Masukan</h3>Total Genap: " + totalGenap + "<hr>");
+document.write("<h3>45. Hitung Jumlah Bilangan Ganjil dari 10 Masukan</h3>Total Ganjil: " + totalGanjil + "<hr>");
+
+
+// =================================
+// 46 - 48. TOTAL RENTANG (n_awal - n_akhir)
+// =================================
+let start = parseInt(prompt("46-48. Masukkan n_awal:") || "1");
+let end = parseInt(prompt("46-48. Masukkan n_akhir:") || "10");
+
+let totalPositif = 0, totalGenapRentang = 0, totalGanjilRentang = 0;
+
+for (let i = start; i <= end; i++) {
+    if (i > 0) totalPositif += i;
+    if (i % 2 === 0) totalGenapRentang += i;
+    else totalGanjilRentang += i;
+}
+
+document.write("<h3>46. Total Bilangan Bulat Positif (" + start + " - " + end + ")</h3>Total: " + totalPositif + "<hr>");
+document.write("<h3>47. Total Bilangan Genap (" + start + " - " + end + ")</h3>Total: " + totalGenapRentang + "<hr>");
+document.write("<h3>48. Total Bilangan Ganjil (" + start + " - " + end + ")</h3>Total: " + totalGanjilRentang + "<hr>");
+
+
+// =================================
+// 49 - 50. BILANGAN PRIMA
+// =================================
+let n_awal_prima = parseInt(prompt("49-50. Masukkan n_awal prima:") || "1");
+let n_akhir_prima = parseInt(prompt("49-50. Masukkan n_akhir prima:") || "30");
+
+function checkPrima(num) {
+    if (num <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+}
+
+let listPrima = [];
+let sumPrima = 0;
+
+for (let i = n_awal_prima; i <= n_akhir_prima; i++) {
+    if (checkPrima(i)) {
+        listPrima.push(i);
+        sumPrima += i;
+    }
+}
+
+document.write("<h3>49. Menampilkan Bilangan Prima (" + n_awal_prima + " - " + n_akhir_prima + ")</h3> " + listPrima.join(", ") + "<hr>");
+document.write("<h3>50. Jumlah Total Bilangan Prima (" + n_awal_prima + " - " + n_akhir_prima + ")</h3> Total: " + sumPrima + "<hr>");
+
+
+// =================================
+// FORMASI BINTANG 1 - 20
+// =================================
+document.write("<h2>Formasi Bintang 1 - 20</h2><hr>");
+
+let formasi = [];
+
+// Formasi 1
+let f1 = "";
+for (let i = 6; i >= 1; i--) f1 += "*".repeat(i) + "&nbsp;".repeat((6 - i) * 2) + "*".repeat(i) + "<br>";
+formasi.push(f1);
+
+// Formasi 2
+let f2 = "";
+for (let i = 1; i <= 6; i++) f2 += "&nbsp;".repeat(6 - i) + "*".repeat(2 * i - 1) + "<br>";
+formasi.push(f2);
+
+// Formasi 3
+let f3 = "";
+[1, 2, 3, 2, 1, 2, 3].forEach(n => f3 += "&nbsp;".repeat(3 - n) + "*".repeat(n) + "<br>");
+formasi.push(f3);
+
+// Formasi 4
+let f4 = "<span class='red'>";
+for (let i = 1; i <= 6; i++) f4 += "*".repeat(i) + "&nbsp;".repeat((6 - i) * 2) + "*".repeat(i) + "<br>";
+f4 += "</span>";
+formasi.push(f4);
+
+// Formasi 5
+let f5 = "";
+for (let i = 6; i >= 1; i--) f5 += "&nbsp;".repeat(6 - i) + "*".repeat(2 * i - 1) + "<br>";
+formasi.push(f5);
+
+// Formasi 6
+let f6 = "";
+[1, 2, 3, 1, 2, 3].forEach(n => f6 += "&nbsp;".repeat(3 - n) + "*".repeat(n) + "<br>");
+formasi.push(f6);
+
+// Formasi 7
+let f7 = "";
+for (let i = 5; i >= 1; i--) f7 += "*".repeat(i) + "<br>";
+for (let i = 2; i <= 5; i++) f7 += "*".repeat(i) + "<br>";
+formasi.push(f7);
+
+// Formasi 8
+let f8 = "";
+for (let i = 0; i < 5; i++) f8 += "0" + "*".repeat(10) + "<br>";
+f8 += "0".repeat(11) + "<br>";
+formasi.push(f8);
+
+// Formasi 9
+let f9 = "<span class='blue'>";
+for (let i = 0; i < 5; i++) f9 += "*".repeat(10) + "0<br>";
+f9 += "0".repeat(11) + "</span>";
+formasi.push(f9);
+
+// Formasi 10
+let f10 = "";
+for (let i = 6; i >= 1; i--) f10 += "*".repeat(i) + "<br>";
+for (let i = 2; i <= 6; i++) f10 += "*".repeat(i) + "<br>";
+formasi.push(f10);
+
+// Formasi 11
+let f11 = "0".repeat(11) + "<br>";
+for (let i = 0; i < 5; i++) f11 += "0" + "*".repeat(10) + "<br>";
+formasi.push(f11);
+
+// Formasi 12
+let f12 = "0".repeat(11) + "<br>";
+for (let i = 0; i < 5; i++) f12 += "*".repeat(10) + "0<br>";
+formasi.push(f12);
+
+// Formasi 13
+let f13 = "<span class='red'>";
+for (let i = 1; i <= 6; i++) f13 += "0".repeat(i) + "*".repeat(7 - i) + "<br>";
+f13 += "</span>";
+formasi.push(f13);
+
+// Formasi 14
+let f14 = "";
+for (let i = 1; i <= 6; i++) f14 += "*".repeat(i) + "0".repeat(7 - i) + "<br>";
+formasi.push(f14);
+
+// Formasi 15
+let f15 = "";
+for (let i = 1; i <= 6; i++) f15 += "0".repeat(7 - i) + "*".repeat(i) + "<br>";
+formasi.push(f15);
+
+// Formasi 16
+let f16 = "";
+for (let i = 1; i <= 6; i++) f16 += "0".repeat(6 - i) + "*".repeat(i) + "<br>";
+formasi.push(f16);
+
+// Formasi 17
+let f17 = "";
+for (let i = 0; i < 6; i++) f17 += "0".repeat(5 - i) + "*" + "0".repeat(i) + "<br>";
+formasi.push(f17);
+
+// Formasi 18
+let f18 = "<span class='blue'>";
+for (let i = 0; i < 6; i++) f18 += "0".repeat(i) + "*" + "0".repeat(5 - i) + "<br>";
+f18 += "</span>";
+formasi.push(f18);
+
+// Formasi 19
+let f19 = "0".repeat(7) + "<br>";
+for (let i = 0; i < 4; i++) f19 += "0" + "*".repeat(5) + "0<br>";
+f19 += "0".repeat(7) + "<br>";
+formasi.push(f19);
+
+// Formasi 20
+let f20 = "";
+for (let i = 0; i < 2; i++) {
+    f20 += "0".repeat(7) + "<br>";
+    f20 += "*".repeat(7) + "<br>";
+    f20 += "=".repeat(7) + "<br>";
+}
+formasi.push(f20);
+
+// Menampilkan seluruh formasi secara berurutan
+for (let idx = 0; idx < formasi.length; idx++) {
+    document.write("<b>Formasi " + (idx + 1) + ".</b><pre>" + formasi[idx] + "</pre>");
+}
+</script>
+
+</body>
+</html>
